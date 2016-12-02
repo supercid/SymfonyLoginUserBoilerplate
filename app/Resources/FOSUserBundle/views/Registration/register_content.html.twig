@@ -1,0 +1,32 @@
+{# {% extends 'FOSUserBundle::layout.html.twig' %} #}
+{{ include('FOSUserBundle::layout.html.twig') }}
+{# {% trans_default_domain 'FOSUserBundle' %} #}
+
+{% block teste %}
+
+	{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+	{{ form_widget(form) }}
+{# 		<select>
+			{% for group in groups %}
+				<li><a href="{{ path('fos_user_group_show', {'groupName': group.getName()} ) }}">{{ group.name() }}</a></li>
+				<option value="{{group.id}}">{{group.name}}</option>
+			{% endfor %}
+		</select>
+ #}
+{# 		{% for group in groups %}
+				{% for r in group.roles %}
+					{{ group.id }}
+					{{ r }}
+
+				{% endfor %}
+		{% endfor %}
+ #}
+		<div>
+			<input type="submit" value="{{ 'registration.submit'|trans }}" />
+		</div>
+
+	{{ form_end(form) }}
+
+
+{% endblock %}
