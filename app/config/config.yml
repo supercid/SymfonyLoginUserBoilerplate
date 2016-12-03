@@ -71,3 +71,14 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    group:
+        group_class: AppBundle\Entity\Group
+        group_manager:  fos_user.group_manager.default
+          # form:
+          #     type:               AppBundle\Form\Type\GroupFormType # or 'fos_user_group' on Symfony < 2.8
+          #     name:               fos_user_group_form
+          #     validation_groups:  [Registration, Default]
+
+    registration:
+        form:
+            type: AppBundle\Form\Type\RegistrationFormType
